@@ -2,13 +2,13 @@
 Executando meu primeiro desafio com angular 
 
 # Resumo 
-Em resumo, sera uma aplicação web para reservas de mesa em restaurantes da franquia MADERO 
-Vou utilizar Angular e ter como referencia sites de reserva como o "get in" e outros 
-Para o codigo vou ter como referencia qualquer material gratuito que eu encontrar no Youtube kkkkk
+- Em resumo, sera uma aplicação web para reservas de mesa em restaurantes da franquia MADERO 
+- Vou utilizar Angular e ter como referencia sites de reserva como o "get in" e outros 
+- Para o codigo vou ter como referencia qualquer material gratuito que eu encontrar no Youtube kkkkk
 
 # Usage
-Aqui vou te mostrar como rodar essa aplicação no seu navegador 
-A ideia é hospedalo no Vercel, mas por hora vamos no metodo root k
+- Aqui vou te mostrar como rodar essa aplicação no seu navegador 
+- A ideia é hospedalo no Vercel, mas por hora vamos no metodo root k
 
 1° Tenha as tecnologias baixadas do projeto em sua maquina 
 - Node.js 16 (eu baixei a versão pelo [text](https://chocolatey.org/) com o comando -> choco install nodejs.install --version=16.10.0) - (Se você ja tiver outra versão do node é possivel que você tenha que desinstalar, não sei direito faz o teste e ve c da boa c não der já sabe \(°°)/)
@@ -16,7 +16,7 @@ A ideia é hospedalo no Vercel, mas por hora vamos no metodo root k
 
 2° Clone o repositorio 
 - Comando no terminal GitBash -> git clone https://github.com/Carlos7uz/Desafio-01.git
-  Dica: Se você abrir o terminal do GitBash no Desktop a pasta do repositorio provavelmente vai estar no Desktop
+- Dica: Se você abrir o terminal do GitBash no Desktop a pasta do repositorio provavelmente vai estar no Desktop
 
 3° Abra um terminal na pasta do repositorio. Exemplo: Se sua pasta estiver no Desktop, abra ela e em seguida de um botão direito dentro da pasta e vá em "abrir GitBash aqui".
 
