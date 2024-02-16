@@ -11,7 +11,7 @@ Executando meu primeiro desafio com angular
 - A ideia é hospedalo no Vercel, mas por hora vamos no metodo root k
 
 1° Tenha as tecnologias baixadas do projeto em sua maquina 
-- Node.js 16 (eu baixei a versão pelo [text](https://chocolatey.org/) com o comando -> choco install nodejs.install --version=16.10.0) - (Se você ja tiver outra versão do node é possivel que você tenha que desinstalar, não sei direito faz o teste e ve c da boa c não der já sabe \(°°)/)
+- Node.js 16 (eu baixei a versão pelo [chocolatey](https://chocolatey.org/) com o comando -> choco install nodejs.install --version=16.10.0) - (Se você ja tiver outra versão do node é possivel que você tenha que desinstalar, não sei direito faz o teste e ve c da boa c não der já sabe \(°°)/)
 - Angular 13 (comando para download -> npm install @angular/cli@13)
 
 2° Clone o repositorio 
