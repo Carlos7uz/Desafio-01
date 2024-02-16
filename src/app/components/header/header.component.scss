@@ -26,6 +26,7 @@ header .logo-container {
 header .logo-container img {
   max-height: 100%;
   margin-left: 24px;
+  margin-right: auto;
   background-color: var(--light-grey);
 }
 
@@ -33,58 +34,20 @@ header .logo-container img {
 header .logo-container button{
   border-radius: 10px;
   padding: 8px;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 900;
   margin-left: 1vw;
+  margin-right: 1vw;
+  width: 100%;
+  max-width: 150px;
 
+  cursor: pointer;
 
   color: var(--light-grey);
   background-color: var(--dark-grey);
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
-header .text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-
-  max-width: 80%;
-  margin-left: 0 auto;
-
-}
-
-header .text-container h1 {
-  font-size: 50px;
-  color: var(--light-grey);
-}
-
-header .text-container p {
-  font-size: 25px;
-  color: var(--light-grey);
-  margin-bottom: 50px;
-
-  font-weight: 600;
-}
-
-header .text-container .heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-
-  margin-bottom: 24px;
-  gap: 14px;
-}
-
-header .text-container .heading-border{
-  height: 4px;
-  width: 100%;
-  background-color: white;
-
-  border-radius: 10px;
-  border-color: var(--light-grey);
-}

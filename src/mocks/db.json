@@ -1,0 +1,10 @@
+{
+  "restaurantes": [
+    {
+      "id": 1,
+      "name": "Madero - Shopping Estação",
+      "type": "Steakhouse",
+      "endereco": "Avenida Sete de Setembro, 2775, Rebouças, Curitiba-PR"
+    }
+  ]
+}
