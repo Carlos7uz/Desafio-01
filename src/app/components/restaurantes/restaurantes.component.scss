@@ -1,0 +1,86 @@
+body{
+  font-family: 'Playfair Display';
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+  text-align: center;
+  padding: 1.5rem;
+  font-weight: 500;
+  font-size: 40px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+
+}
+
+.restaurantes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style: none;
+  padding: 2rem;
+  margin: 0 5rem 0 5rem;
+
+
+
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1500px) {
+  .restaurantes{
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .restaurantes{
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .restaurantes{
+      grid-template-columns:  1fr;
+  }
+}
+
+
+.li-restaurantes {
+  width: calc(90% - 2rem);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.li-restaurantes:hover {
+  transform: scale(1.05);
+}
+
+
+
+.name {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.type {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.imagem {
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  height: 10rem;
+}

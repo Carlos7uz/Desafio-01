@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurante } from 'src/app/restaurante.model';
+import { RestauranteService } from 'src/app/restaurante.service';
+
 
 @Component({
   selector: 'app-restaurantes',
@@ -7,16 +9,24 @@ import { Restaurante } from 'src/app/restaurante.model';
   styleUrls: ['./restaurantes.component.scss']
 })
 export class RestaurantesComponent implements OnInit {
-  restaurante: Restaurante  = {
-    id: 1,
-    name: 'Madero - Shopping Estação',
-    type: 'Steakhouse',
-    endereco: 'Avenida Sete de Setembro, 2775, Rebouças, Curitiba-PR'
-  };
 
-  constructor() { }
+  restaurantes: Restaurante[] = [];
+
+  selectedRestaurante?: Restaurante;
+
+  constructor(private restauranteService: RestauranteService) {}
+
 
   ngOnInit(): void {
+    this.getRestaurantes();
   }
 
+  getRestaurantes(): void {
+    this.restauranteService.getRestaurantes().subscribe(restaurantes =>
+      this.restaurantes = restaurantes);
+  }
+
+  onSelect(restaurante: Restaurante): void{
+    this.selectedRestaurante = restaurante;
+  }
 }

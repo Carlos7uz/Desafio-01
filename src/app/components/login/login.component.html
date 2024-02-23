@@ -1,0 +1,36 @@
+<body>
+  <div class="login-container">
+    <form class="login-form" action="/login" method="post">
+      <h2>Login</h2>
+
+      <!-- Campos de Entrada -->
+      <div class="form-group">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <!-- Opções Adicionais -->
+      <div class="form-options">
+        <div class="remember-me">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember">Lembrar-me</label>
+        </div>
+        <a href="/esqueceu-senha">Esqueceu a senha?</a>
+      </div>
+
+      <!-- Botão de Login -->
+      <button type="submit">Entrar</button>
+
+      <!-- Links para Cadastro ou Página Principal -->
+      <div class="form-links">
+        <p>Ainda não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+        <p><a href="/">Voltar para a Página Principal</a></p>
+      </div>
+    </form>
+  </div>
+</body>

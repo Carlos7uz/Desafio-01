@@ -1,0 +1,97 @@
+
+
+h1 {
+  font-family: 'Playfair Display';
+  font-size: 2.3rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 1rem;
+
+}
+
+h2 {
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+}
+
+h3 {
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+
+
+  margin-bottom: 1rem;
+}
+
+h4{
+  font-size: 2rem;
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+  margin-bottom: 1rem;
+
+  width: 75%;
+}
+
+p{
+  font-size: 2rem;
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+  margin-bottom: 1rem;
+
+  width: 50%;
+
+}
+
+mat-card-title{
+  background-color: white;
+}
+
+
+.shopping-box{
+  justify-content: center;
+}
+
+.pointer{
+  cursor: pointer;
+
+  max-width: 350px;
+}
+
+img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+mat-card-content{
+  background-color: white;
+}
+
+.type{
+  font-weight: 300;
+  font-size: 19px;
+  background-color: white;
+  border-bottom: 1px solid black;
+}

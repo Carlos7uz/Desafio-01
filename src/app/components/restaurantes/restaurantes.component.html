@@ -1,15 +1,24 @@
-<h2>Restaurantes recomendados</h2>
+<body>
+  <h2>Restaurantes Madero Curitiba</h2>
 
+  <section class="content">
+    <ul class="restaurantes">
+      <li
+        class="li-restaurantes"
+        *ngFor="let restaurante of restaurantes"
+        (click)="onSelect(restaurante)"
+      >
 
-<div>
-  {{ restaurante.name }}
-</div>
-<div>
-  {{ restaurante.type }}
-</div>
-<div>
-  <span>Encereço: </span>{{ restaurante.endereco }}
-</div>
+        <img class="imagem" [src]="restaurante.img" alt="{{restaurante.name}}">
+        <span class="name">{{restaurante.name}}</span>
 
+        <span class="type">{{restaurante.type}}</span>
+
+      </li>
+    </ul>
+  </section>
+
+  <app-restaurante-detail [selectedRestaurante]="selectedRestaurante"></app-restaurante-detail>
+</body>
 
 

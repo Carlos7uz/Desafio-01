@@ -1,0 +1,27 @@
+.all-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4rem;
+
+
+  margin-bottom: 3rem;
+
+}
+
+.all-search img{
+opacity: 0.7;
+}
+
+.all-search .search{
+  width: 25%;
+  min-width: 15rem;
+  height: 2rem;
+
+
+  border-radius: 1rem;
+  padding: 1rem;
+
+  font-size: 1.8rem;
+}

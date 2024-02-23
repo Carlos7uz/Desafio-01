@@ -1,0 +1,31 @@
+
+  <div class="title-app">
+    <h1>Encontre aqui</h1>
+    <h2>um restaurante MADERO</h2>
+  </div>
+
+  <app-search></app-search>
+
+  <h3>Vai passear no shopping?</h3>
+  <h4>Garanta sua mesa</h4>
+  <br>
+
+
+    <div
+      class="shopping-box"  fxLayout = "row"
+      fxLayout.lt-md = "column"
+      fxLayoutGap = "25px"
+      fxLayoutAlign="center center"
+    >
+      <mat-card class="pointer" *ngFor="let restaurante of restaurantes" routerLink="/restaurantedetail/{{restaurante.id}}">
+        <mat-card-title>{{ restaurante.name }}</mat-card-title>
+        <img mat-card-image [src]="restaurante.img" alt="{{restaurante.name}}">
+        <mat-card-content>
+          <span class="type">{{restaurante.type}}</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+
+
