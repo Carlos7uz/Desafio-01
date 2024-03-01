@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RESTAURANTES } from '././mock-restaurantes'
-import { Restaurante } from './restaurante.model';
+import { RESTAURANTES } from './mock-restaurantes'
+import { Restaurante } from '../models/restaurante.model';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -13,5 +13,12 @@ export class RestauranteService {
     return restaurantes;
   }
 
+  getRestaurante(id: number): Observable<Restaurante> {
+    const restaurante = RESTAURANTES.find(restaurante => restaurante.id === id)!;
+
+    return of(restaurante);
+  }
+
   constructor() { }
 }
+

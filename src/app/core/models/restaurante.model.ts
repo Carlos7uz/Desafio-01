@@ -4,4 +4,7 @@ export interface Restaurante {
   name: string;
   type: string;
   endereco: string;
+  horario: string;
+  comoChegar: string;
+
 }

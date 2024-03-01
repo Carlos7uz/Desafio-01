@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Restaurante } from 'src/app/restaurante.model';
-import { RestauranteService } from 'src/app/restaurante.service';
+import { Restaurante } from 'src/app/core/models/restaurante.model';
+import { RestauranteService } from 'src/app/core/services/restaurante.service';
 
 @Component({
   selector: 'app-dashboard',

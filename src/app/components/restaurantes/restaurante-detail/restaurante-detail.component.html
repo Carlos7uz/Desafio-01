@@ -1,0 +1,44 @@
+<div class="goBack"  >
+  <span class="material-symbols-outlined" (click)="goBack()">
+    arrow_back_ios
+  </span>
+</div>
+
+<body>
+
+  <section class="selected-content" *ngIf="selectedRestaurante">
+    <div class="restaurant-details">
+      <div class="header">
+        <h2 class="selected-title">{{ selectedRestaurante.name | uppercase }}</h2>
+        <div class="selected-type">{{ selectedRestaurante.type }}</div>
+      </div>
+      <div class="image">
+        <img src="{{selectedRestaurante.img}}" alt="image restaurante">
+      </div>
+      <div class="description">
+
+        <div class="address">
+          <span>Endereço: </span>
+          {{ selectedRestaurante.endereco }}
+        </div>
+
+        <div class="additional-info">
+          <div class="info-item">
+            <span>Horário de Funcionamento: </span>
+            {{ selectedRestaurante.horario || 'Horário não disponível' }}
+          </div>
+          <div class="info-item">
+            <span>Como Chegar: </span>
+            {{ selectedRestaurante.comoChegar || 'Informações não disponíveis' }}
+          </div>
+        </div>
+      </div>
+
+      <button class="reserve-button">Reservar Agora</button>
+
+
+    </div>
+  </section>
+
+</body>
+

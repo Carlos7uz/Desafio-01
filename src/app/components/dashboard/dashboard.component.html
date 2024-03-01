@@ -14,15 +14,19 @@
     <div
       class="shopping-box"  fxLayout = "row"
       fxLayout.lt-md = "column"
-      fxLayoutGap = "25px"
+      fxLayoutGap = "3rem"
       fxLayoutAlign="center center"
     >
-      <mat-card class="pointer" *ngFor="let restaurante of restaurantes" routerLink="/restaurantedetail/{{restaurante.id}}">
-        <mat-card-title>{{ restaurante.name }}</mat-card-title>
+      <mat-card
+        class="mat-elevation-z8"
+        *ngFor="let restaurante of restaurantes"
+        [routerLink]="['/restaurantes', restaurante.id]"
+      >
         <img mat-card-image [src]="restaurante.img" alt="{{restaurante.name}}">
-        <mat-card-content>
-          <span class="type">{{restaurante.type}}</span>
-        </mat-card-content>
+          <mat-card-content>
+            <mat-card-title>{{ restaurante.name }}</mat-card-title>
+            <span class="type">{{restaurante.type}}</span>
+          </mat-card-content>
       </mat-card>
     </div>
 

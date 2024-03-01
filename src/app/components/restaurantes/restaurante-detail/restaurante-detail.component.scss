@@ -1,0 +1,49 @@
+body{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  display:flex;
+
+}
+
+.goBack{
+  position: fixed;
+  display: flex;
+  justify-content:flex-start;
+
+  cursor: pointer;
+
+  margin-top: 4rem;
+  margin-left: 8%;
+}
+
+
+
+
+
+.reserve-button{
+  font-family: "Playfair Display";
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.4rem;
+  margin: 1rem;
+
+  width: 10rem;
+
+
+
+  border-radius: 0.3rem;
+  border: 2px solid black;
+
+  cursor: pointer;
+}
+
+.image img {
+  width: 100%; /* Garante que a imagem ocupa 100% da largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  max-height: 200px; /* Define uma altura máxima para a imagem */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível */
+  border-radius: 8px; /* Adiciona borda arredondada, ajuste conforme necessário */
+  margin-bottom: 20px;
+}

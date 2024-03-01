@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Restaurante } from 'src/app/restaurante.model';
-import { RestauranteService } from 'src/app/restaurante.service';
+import { Restaurante } from 'src/app/core/models/restaurante.model';
+import { RestauranteService } from 'src/app/core/services/restaurante.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class RestaurantesComponent implements OnInit {
 
   restaurantes: Restaurante[] = [];
 
-  selectedRestaurante?: Restaurante;
+
 
   constructor(private restauranteService: RestauranteService) {}
 
@@ -26,7 +26,5 @@ export class RestaurantesComponent implements OnInit {
       this.restaurantes = restaurantes);
   }
 
-  onSelect(restaurante: Restaurante): void{
-    this.selectedRestaurante = restaurante;
-  }
+
 }
