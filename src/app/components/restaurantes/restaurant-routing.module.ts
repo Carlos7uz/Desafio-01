@@ -5,8 +5,8 @@ import { RestaurantesComponent } from './all_restaurants/restaurantes.component'
 
 
 const routes: Routes = [
-  {path: 'restaurantes', component: RestaurantesComponent},
-  {path: 'restaurantes/:id', component: RestauranteDetailComponent},
+  {path: '', component: RestaurantesComponent},
+  {path: ':id', component: RestauranteDetailComponent},
 
 ]
 
