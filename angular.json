@@ -76,7 +76,8 @@
               "browserTarget": "desafio1:build:production"
             },
             "development": {
-              "browserTarget": "desafio1:build:development"
+              "browserTarget": "desafio1:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

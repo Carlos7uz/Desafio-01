@@ -5,13 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardModule } from './components/dashboard/dashboard.module';
-import { RestaurantesModule } from './components/restaurantes/restaurantes.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,6 +28,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     // feature
 
