@@ -1,5 +1,6 @@
 # Desafio-01
-Executando meu primeiro desafio com angular 
+- Executando meu primeiro desafio com angular 
+- Tema: Aplicação web para reserva de mesas
 
 # Resumo 
 - Em resumo, sera uma aplicação web para reservas de mesa em restaurantes da franquia MADERO 
