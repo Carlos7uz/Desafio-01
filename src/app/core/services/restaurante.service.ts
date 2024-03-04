@@ -3,12 +3,13 @@ import { RESTAURANTES } from './mock-restaurantes'
 import { Restaurante } from '../models/restaurante.model';
 import { Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestauranteService {
-  private restaurantesUrl = 'api/restaurantes';
+  private restaurantesUrl = `${environment.baseUrl}/restaurantes`;
 
   constructor(private http: HttpClient) { }
 

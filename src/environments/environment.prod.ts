@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://api-rest-pi-nine.vercel.app/restaurantes'
 };
