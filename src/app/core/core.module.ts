@@ -3,21 +3,40 @@ import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { LoadingComponent } from './components/loading/loading.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
+
+const COMPONENTS =[
+  PageNotFoundComponent,
+  LoadingComponent
+
+];
+
+const MODULES = [
+  MaterialModule,
+  FlexLayoutModule,
+  AppRoutingModule,
+  RouterModule,
+]
 
 
 @NgModule({
-  declarations: [
-    PageNotFoundComponent
-  ],
-  imports: [
-    MaterialModule,
-    FlexLayoutModule,
-    AppRoutingModule
-  ],
+  declarations: [ COMPONENTS ],
+  imports: [ CommonModule, MODULES],
   exports: [
-    MaterialModule,
-    FlexLayoutModule,
+    COMPONENTS,
+    MODULES
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
+    }
   ]
 
 })

@@ -33,4 +33,14 @@ export class RestauranteDetailComponent  implements OnInit {
   goBack():void{
     this.location.back();
   }
-}
+
+  save(): void{
+    this.restauranteService.updateRestaurante(this.selectedRestaurante).subscribe(
+      (restaurante) => console.log(restaurante));
+      location.reload();
+  }
+
+
+  formValid(): boolean{
+    return !!this.selectedRestaurante.name.trim()
+  }}

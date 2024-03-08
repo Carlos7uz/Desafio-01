@@ -1,4 +1,38 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "type": 1,
+      "name": "Admin Adminson",
+      "email": "admin@example.com",
+      "cell": "7777-7777",
+      "password": "admin123"
+    },
+    {
+      "id": 2,
+      "type": 0,
+      "name": "Maria Oliveira",
+      "email": "maria@example.com",
+      "cell": "8888-8888",
+      "password": "senha456"
+    },
+    {
+      "id": 3,
+      "type": 0,
+      "name": "João Silva",
+      "email": "joao@example.com",
+      "cell": "9999-9999",
+      "password": "senha123"
+    },
+    {
+      "id": 4,
+      "type": 0,
+      "name": "Carlos Roberto dos Santos Pilati Luz ",
+      "email": "carlosluz12892@gmail.com",
+      "cell": "41 920034148",
+      "password": "123"
+    }
+  ],
   "restaurantes": [
     {
       "id": 1,

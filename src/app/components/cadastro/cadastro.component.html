@@ -1,0 +1,28 @@
+<div class="registration-container">
+  <h2>Cadastro de Usuário</h2>
+
+  <form (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" [(ngModel)]="user.name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cell">Celular:</label>
+      <input type="tel" id="cell" [(ngModel)]="user.cell" name="cell">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha:</label>
+      <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
+    </div>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+

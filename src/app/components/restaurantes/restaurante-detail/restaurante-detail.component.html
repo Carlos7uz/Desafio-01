@@ -7,13 +7,13 @@
 <body>
 
   <section class="selected-content" *ngIf="selectedRestaurante">
+    <div class="image">
+      <img src="{{selectedRestaurante.img}}" alt="image restaurante">
+    </div>
     <div class="restaurant-details">
       <div class="header">
         <h2 class="selected-title">{{ selectedRestaurante.name | uppercase }}</h2>
         <div class="selected-type">{{ selectedRestaurante.type }}</div>
-      </div>
-      <div class="image">
-        <img src="{{selectedRestaurante.img}}" alt="image restaurante">
       </div>
       <div class="description">
 
@@ -34,11 +34,18 @@
         </div>
       </div>
 
-      <button class="reserve-button">Reservar Agora</button>
-
-
+      <button class="reserve-button" routerLink="/forms">Reservar Agora</button>
     </div>
   </section>
 
 </body>
+
+<footer class="admin">
+  <div class="title_adm">
+    <h2>ADM functions</h2>
+  </div>
+  <button mat-raised-button (click)="save()">Modificar/Atualizar</button>
+  <button mat-raised-button >Deletar/Remover</button>
+</footer>
+
 

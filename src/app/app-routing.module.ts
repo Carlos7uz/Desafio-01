@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsComponent } from './components/forms/forms.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'forms', component: FormsComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'cadastro', component: CadastroComponent},
   {
     path: 'restaurantes',
     loadChildren: () => import('./components/restaurantes/restaurantes.module').then

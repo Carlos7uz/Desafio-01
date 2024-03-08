@@ -1,44 +1,74 @@
-<form action="" class="forms-group">
-  <h3>
-    Faça sua reserva
-  </h3>
-  <div class="radio-wrapper">
-    <label for="place">Local desejado:</label>
-    <input type="">
-  </div>
-  <div class="radio-wrapper">
-    <label for="data">Data desejada:</label>
-    <input type="date" id="data" name="data" required>
-  </div>
-  <div class="radio-wrapper">
-    <label for="pessoas">Número de pessoas:</label>
-		<input type="number" id="pessoas" name="pessoas" min="1" required>
-  </div>
-  <div class="radio-wrapper">
-    <label for="hora">Horário da reserva:</label>
-		<select id="hora" name="hora" required>
-      <option value="11:45">11:45</option>
-      <option value="12:00">12:00</option>
-      <option value="12:15">12:15</option>
-      <option value="12:30">12:30</option>
-      <option value="12:45">12:45</option>
-      <option value="13:00">13:00</option>
-      <option value="14:00">14:00</option>
-      <option value="15:00">15:00</option>
-      <option value="16:00">16:00</option>
-      <option value="17:00">17:00</option>
-      <option value="18:00">18:00</option>
-      <option value="18:30">18:30</option>
-      <option value="18:45">18:45</option>
-      <option value="19:00">19:00</option>
-      <option value="19:15">19:15</option>
-      <option value="19:30">19:30</option>
-      <option value="19:45">19:45</option>
-      <option value="20:00">20:00</option>
-  </select><br>
-  </div>
-  <div class="button-reserva">
-    <button>ENCONTAR RESERVAS</button>
-  </div>
+<body>
 
-</form>
+  <form action="" class="reservation-form">
+    <h3>Faça sua reserva</h3>
+
+    <div class="form-group">
+      <label for="place">Local desejado:</label>
+      <input type="text" id="place" name="place" placeholder="Informe o local desejado" required>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Data desejada:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="people">Número de pessoas:</label>
+      <input type="number" id="people" name="people" min="1" required>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Horário da reserva:</label>
+      <select id="time" name="time" required>
+        <option value="" disabled selected>Selecione o horário</option>
+        <option value="11:45">11:45</option>
+        <option value="12:00">12:00</option>
+        <option value="12:15">12:15</option>
+        <option value="12:30">12:30</option>
+        <option value="12:45">12:45</option>
+        <option value="13:00">13:00</option>
+        <option value="13:15">13:15</option>
+        <option value="13:30">13:30</option>
+        <option value="13:45">13:45</option>
+        <option value="14:00">14:00</option>
+        <option value="14:15">14:15</option>
+        <option value="14:30">14:30</option>
+        <option value="14:45">14:45</option>
+        <option value="15:00">15:00</option>
+        <option value="15:15">15:15</option>
+        <option value="15:30">15:30</option>
+        <option value="15:45">15:45</option>
+        <option value="16:00">16:00</option>
+        <option value="16:15">16:15</option>
+        <option value="16:30">16:30</option>
+        <option value="16:45">16:45</option>
+        <option value="17:00">17:00</option>
+        <option value="17:15">17:15</option>
+        <option value="17:30">17:30</option>
+        <option value="17:45">17:45</option>
+        <option value="18:00">18:00</option>
+        <option value="18:15">18:15</option>
+        <option value="18:30">18:30</option>
+        <option value="18:45">18:45</option>
+        <option value="19:00">19:00</option>
+        <option value="19:15">19:15</option>
+        <option value="19:30">19:30</option>
+        <option value="19:45">19:45</option>
+        <option value="20:00">20:00</option>
+        <option value="20:15">20:15</option>
+        <option value="20:30">20:30</option>
+        <option value="20:45">20:45</option>
+        <option value="21:00">21:00</option>
+        <option value="21:15">21:15</option>
+        <option value="21:30">21:30</option>
+        <option value="21:45">21:45</option>
+        <option value="22:00">22:00</option>
+    </select><br>
+    </div>
+    <div class="button-reserva">
+      <button type="submit">ENCONTAR RESERVAS</button>
+    </div>
+
+  </form>
+</body>

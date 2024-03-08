@@ -11,16 +11,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     FormsComponent,
     LoginComponent,
     HeaderComponent,
+    CadastroComponent,
 
   ],
   imports: [
