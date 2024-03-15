@@ -10,16 +10,23 @@ import { RestauranteService } from 'src/app/core/services/restaurante.service';
 export class DashboardComponent implements OnInit {
 
   restaurantes: Restaurante[] = [];
+  restaurantesHot: Restaurante[] = [];
 
   constructor(private restauranteService: RestauranteService) { }
 
   ngOnInit(): void {
     this.getRestaurante();
+    this.getHotRestaurantes();
   }
 
   getRestaurante(){
     this.restauranteService.getRestaurantes().subscribe(restaurantes =>
       this.restaurantes = restaurantes.slice(0,3));
+  }
+
+  getHotRestaurantes(){
+    this.restauranteService.getRestaurantes().subscribe(restaurantesHot =>
+      this.restaurantesHot = restaurantesHot.slice(3,6))
   }
 
 }

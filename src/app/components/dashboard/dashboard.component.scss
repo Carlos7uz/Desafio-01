@@ -78,6 +78,7 @@ mat-card-title{
 
 .shopping-box{
   justify-content: center;
+  margin-bottom: 11vh;
 }
 
 
@@ -106,6 +107,9 @@ mat-card-content{
   background-color: white;
 }
 
+
+
+
 .type{
   font-weight: 300;
   font-size: 19px;
@@ -115,50 +119,71 @@ mat-card-content{
 
 .delivery{
   display: flex;
+  align-items:center;
   justify-content: center;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
+  width: 97%;
+  height: 40vh;
 
-  margin: -8vh 0 3vh 0;
+  background: radial-gradient(circle at 10% 20%, rgb(149, 219, 254) 0%, rgb(7, 134, 197) 90.1%);
+
+  border: 0px solid rgb(221, 221, 221);
+  border-radius: 2vh;
+
+  margin: auto;
   padding: 0;
+  margin-bottom: 8rem;
+
+  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
+  0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+  0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+
 }
-.img_app_delivery{
-  width: 15rem;
-  height: 16rem;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.footer{
+.title_delivery{
   display: flex;
   justify-content: flex-start;
-  width: 100%;
-  height: 17vh;
-  background-color: rgb(219, 219, 219);
+  margin: auto;
+  margin-bottom: 24vh;
+
+  font-size: 3.5rem;
+  padding: 0;
+  font-weight: 900;
+  color: rgb(39, 39, 39);
+
 }
 
-.footer-content{
-  background-color: rgb(219, 219, 219);
+.img_app_delivery{
+  cursor: pointer;
+  width: 40vh;
+  height: 40vh;
+  margin: auto;
 }
 
-.footer-content-title{
-  background-color: rgb(219, 219, 219);
+.button_delivery{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-size: 2vh;
+  width: 20vh;
+  height: 8vh;
+  margin-top: 25vh;
+  background-color: #ffffff;
 }
 
-.footer-content2{
-  background-color: rgb(219, 219, 219);
+.button_delivery1{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-size: 2vh;
+  width: 20vh;
+  height: 8vh;
+  margin-top: 25vh;
+  margin-left: 2vh;
+  margin-right: 1.5vh;
+  background-color: white;
+
+
 }
+
+
+

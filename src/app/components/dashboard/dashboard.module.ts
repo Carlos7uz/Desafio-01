@@ -5,12 +5,14 @@ import { MaterialModule } from '../../material/material.module';
 import { SearchComponent } from '../search/search.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,

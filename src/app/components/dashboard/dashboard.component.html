@@ -1,69 +1,66 @@
-<div class="main">
-
-  <div class="title-app">
-    <h1>Encontre aqui</h1>
-    <h2>um restaurante MADERO</h2>
-  </div>
-
+<div class="title-app">
+  <h1>Encontre aqui</h1>
+  <h2>um restaurante MADERO</h2>
   <app-search></app-search>
-
-
-  <mat-card class="delivery">
-    <img class="img_app_delivery" src="../../../assets/img/app_madero_mao-removebg-preview.png" alt="aplicativo MADERO">
-  </mat-card>
-
-
-  <h3>Vai passear no shopping?</h3>
-  <h4>Garanta sua mesa</h4>
-  <br>
-
-
-    <div
-      class="shopping-box"  fxLayout = "row"
-      fxLayout.lt-md = "column"
-      fxLayoutGap = "3rem"
-      fxLayoutAlign="center center"
-    >
-      <mat-card
-        class="mat-elevation-z8"
-        *ngFor="let restaurante of restaurantes"
-        [routerLink]="['/restaurantes', restaurante.id]"
-      >
-        <img mat-card-image [src]="restaurante.img" alt="{{restaurante.name}}">
-          <mat-card-content>
-            <mat-card-title>{{ restaurante.name }}</mat-card-title>
-            <span class="type">{{restaurante.type}}</span>
-          </mat-card-content>
-      </mat-card>
-    </div>
 </div>
 
 
+<h3>Melhores avaliados de Curitiba</h3>
+<br>
 
 
+<div
+  class="shopping-box"  fxLayout = "row"
+  fxLayout.lt-md = "column"
+  fxLayoutGap = "3rem"
+  fxLayoutAlign="center center"
+>
+  <mat-card
+    class="mat-elevation-z8"
+    *ngFor="let restauranteH of restaurantesHot"
+    [routerLink]="['/restaurantes', restauranteH.id]"
+  >
+    <img mat-card-image [src]="restauranteH.img" alt="{{restauranteH.name}}">
+      <mat-card-content>
+        <mat-card-title>{{ restauranteH.name }}</mat-card-title>
+        <span class="type">{{restauranteH.type}}</span>
+      </mat-card-content>
+  </mat-card>
+</div>
 
 
+<div class="delivery">
+  <img  class="img_app_delivery" src="../../../assets/img/app_madero_mao-removebg-preview.png" alt="aplicativo MADERO">
+  <h4 class="title_delivery">Faça parte do grupo MADERO</h4>
 
-<mat-card class="footer" fxLayout="row" fxLayoutAlign="space-evenly center" >
-  <mat-card-header class="footer-header" >
-    <mat-list role="list">
-      <mat-list-item role="listitem1">MADERO</mat-list-item>
-      <mat-list-item role="listitem2"><button mat-button>Termos de uso</button></mat-list-item>
-      <mat-list-item role="lisstitem3"><button mat-button>Política de privacidade</button></mat-list-item>
-    </mat-list>
-  </mat-card-header>
+  <button mat-button class="button_delivery" onclick="window.open('https://play.google.com/store/apps/details?id=br.com.alphacode.madero', '_blank')">Google Play</button>
+  <button mat-button class="button_delivery1" onclick="window.open('https://apps.apple.com/br/app/grupo-madero-app/id1579688707', '_blank')">App Store</button>
+</div>
 
-  <mat-card-content class="footer-content">
-    <mat-card-title class="footer-content-title">Precisa de ajuda com sua reserva?</mat-card-title>
-    <mat-card-actions>
-      <button mat-button>Dúvidas frequentes</button>
-    </mat-card-actions>
 
-  </mat-card-content>
+<h3>Vai passear no shopping?</h3>
+<h4>Garanta sua mesa</h4>
+<br>
 
-  <mat-card-content class="footer-content2">
-    <mat-card-title class="footer-content2">Add title after</mat-card-title>
-    <mat-card-subtitle>Add subtitle after</mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
 
+<div
+  class="shopping-box"  fxLayout = "row"
+  fxLayout.lt-md = "column"
+  fxLayoutGap = "3rem"
+  fxLayoutAlign="center center"
+>
+  <mat-card
+    class="mat-elevation-z8"
+    *ngFor="let restaurante of restaurantes"
+    [routerLink]="['/restaurantes', restaurante.id]"
+  >
+    <img mat-card-image [src]="restaurante.img" alt="{{restaurante.name}}">
+      <mat-card-content>
+        <mat-card-title>{{ restaurante.name }}</mat-card-title>
+        <span class="type">{{restaurante.type}}</span>
+      </mat-card-content>
+  </mat-card>
+</div>
+
+
+<app-footer></app-footer>

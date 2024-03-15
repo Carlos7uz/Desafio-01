@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 
+
 const routes: Routes = [
 
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},

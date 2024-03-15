@@ -6,7 +6,7 @@
 
 <body>
 
-  <section class="selected-content" *ngIf="selectedRestaurante">
+  <section class="selected-content" *ngIf="selectedRestaurante" fxLayout="column">
     <div class="image">
       <img src="{{selectedRestaurante.img}}" alt="image restaurante">
     </div>
@@ -41,11 +41,7 @@
 </body>
 
 <footer class="admin">
-  <div class="title_adm">
-    <h2>ADM functions</h2>
-  </div>
-  <button mat-raised-button (click)="save()">Modificar/Atualizar</button>
-  <button mat-raised-button >Deletar/Remover</button>
+  <button mat-raised-button routerLink="adm">ADM <br> functions</button>
 </footer>
 
 

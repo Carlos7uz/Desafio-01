@@ -18,7 +18,7 @@ body {
 
 .selected-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -26,12 +26,12 @@ body {
   overflow: hidden;
   margin-left: 30vh;
   margin-right: 30vh;
-  height: 45vh;
+  height: 55vh;
 }
 
 .image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   height: 25vh;
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -103,8 +103,13 @@ body {
   text-align: center;
 }
 
-.title_adm {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
+.admin button {
+  font-size: 2vh;
+  font-weight: 900;
+  width: 20vh;
+
+}
+
+.admin button:hover{
+  background-color: #dfdddd;
 }
