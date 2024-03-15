@@ -31,6 +31,45 @@
       "email": "carlosluz12892@gmail.com",
       "cell": "41 920034148",
       "password": "123"
+    },
+    {
+      "id": 5,
+      "type": 0,
+      "name": "Willian",
+      "email": "willian@test.com",
+      "cell": "41 9 45561235",
+      "password": "0987654321"
+    },
+    {
+      "id": 6,
+      "type": 0,
+      "name": "O",
+      "email": "O",
+      "cell": "1",
+      "password": "1"
+    },
+    {
+      "id": 7,
+      "type": 0,
+      "name": "Lucas",
+      "email": "lucas@test.com",
+      "cell": "41                                                     ",
+      "password": "123"
+    },
+    {
+      "name": "Teste",
+      "email": "teste@teste.com",
+      "cell": "11111111111111",
+      "password": "1234567890098765432",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "type": 0,
+      "name": "Teste3",
+      "email": "teste3@teste3.com.br",
+      "cell": "33333333333",
+      "password": "12897832049"
     }
   ],
   "restaurantes": [
