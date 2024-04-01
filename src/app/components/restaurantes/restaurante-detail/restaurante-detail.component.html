@@ -6,42 +6,45 @@
 
 <body>
 
-  <section class="selected-content" *ngIf="selectedRestaurante" fxLayout="column">
-    <div class="image">
-      <img src="{{selectedRestaurante.img}}" alt="image restaurante">
-    </div>
-    <div class="restaurant-details">
-      <div class="header">
-        <h2 class="selected-title">{{ selectedRestaurante.name | uppercase }}</h2>
-        <div class="selected-type">{{ selectedRestaurante.type }}</div>
-      </div>
-      <div class="description">
 
-        <div class="address">
-          <span>Endereço: </span>
-          {{ selectedRestaurante.endereco }}
-        </div>
+  <div class="selected-content" *ngIf="selectedRestaurante" fxLayout="column">
+    <h1>Restaurant Details</h1>
 
-        <div class="additional-info">
-          <div class="info-item">
-            <span>Horário de Funcionamento: </span>
-            {{ selectedRestaurante.horario || 'Horário não disponível' }}
-          </div>
-          <div class="info-item">
-            <span>Como Chegar: </span>
-            {{ selectedRestaurante.comoChegar || 'Informações não disponíveis' }}
-          </div>
-        </div>
+
+      <div class="image">
+        <img [src]="selectedRestaurante.img" alt="image restaurante">
       </div>
 
-      <button class="reserve-button" routerLink="/forms">Reservar Agora</button>
-    </div>
-  </section>
+      <div class="restaurant-details">
+        <div class="header">
+          <h2 class="selected-title">{{ selectedRestaurante.name | uppercase }}</h2>
+          <div class="selected-type">{{ selectedRestaurante.type }}</div>
+        </div>
 
+        <div class="description">
+
+          <div class="address">
+            <span>Endereço: </span>
+            {{ selectedRestaurante.endereco }}
+          </div>
+
+          <div class="additional-info">
+            <div class="info-item">
+              <span>Horário de Funcionamento: </span>
+              {{ selectedRestaurante.horario || 'Horário não disponível' }}
+            </div>
+            <div class="info-item">
+              <span>Como Chegar: </span>
+              {{ selectedRestaurante.comoChegar || 'Informações não disponíveis' }}
+            </div>
+          </div>
+        </div>
+
+        <button class="reserve-button" [routerLink]="['/forms', {localDesejado: selectedRestaurante.name}]">Reservar Agora</button>
+      </div>
+    </div>
 </body>
 
-<footer class="admin">
-  <button mat-raised-button routerLink="adm">ADM <br> functions</button>
-</footer>
+
 
 

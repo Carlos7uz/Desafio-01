@@ -1,0 +1,36 @@
+<mat-form-field appearance="fill" class="input-width">
+  <mat-label>
+    {{ label }}
+  </mat-label>
+
+  <input
+  [matAutocomplete]="auto"
+  matInput
+  placeholder="Restaurante name"
+  #searchBox
+  type="text"
+  (input)="search(searchBox.value)"
+  />
+
+  <button
+    mat-icon-button
+    matSuffix
+    *ngIf=" searchBox.value"
+    (click)="searchBox.value='' "
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    (optionSelected)="onSelected($event); searchBox.value='' "
+  >
+    <mat-option
+      *ngFor="let restaurante of restaurantes$ | async" [value]="restaurante"
+    >
+      {{ restaurante.name }}
+    </mat-option>
+
+  </mat-autocomplete>
+
+</mat-form-field>

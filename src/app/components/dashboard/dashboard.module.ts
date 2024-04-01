@@ -6,19 +6,24 @@ import { SearchComponent } from '../search/search.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { FooterComponent } from '../footer/footer.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     SearchComponent,
-    FooterComponent,
+    FooterComponent
+
   ],
   imports: [
     CommonModule,
     MaterialModule,
     DashboardRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule,
+
   ]
 })
 export class DashboardModule { }

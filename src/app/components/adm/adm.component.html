@@ -1,0 +1,37 @@
+
+<body>
+  <h2>Painel Admin</h2>
+
+  <app-restaurante-search fxLayoutAlign="center center" [label]="'Restaurant to update'" (selected)="onSelected($event)" ></app-restaurante-search>
+
+  <div class="button-add" fxLayout="row" fxLayoutAlign="end center" >
+    <button  mat-fab color="basic" routerLink="new" aria-label="plus one icon">
+      <mat-icon>plus_one</mat-icon>
+    </button>
+  </div>
+
+  <section class="content">
+    <ul class="restaurantes">
+      <li
+
+        class="li-restaurantes"
+        *ngFor="let restaurante of restaurantes"
+        routerLink="/adm/{{restaurante.id}}"
+
+      >
+
+        <img class="mat-elevation-z8" [src]="restaurante.img" alt="{{restaurante.name}}">
+        <span class="name">{{restaurante.name}}</span>
+
+        <span class="type">{{restaurante.type}}</span>
+
+
+
+      </li>
+    </ul>
+  </section>
+
+
+</body>
+
+

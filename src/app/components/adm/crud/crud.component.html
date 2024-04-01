@@ -1,0 +1,101 @@
+<h1>{{ isEditing ? "ADM Update" : "ADM Create"  }} Restaurant</h1>
+
+
+<form [formGroup]="form" novalidate>
+<div class="main" fxLayout="column">
+  <div>
+    <mat-card class="update">
+      <mat-card-content fxLayout="column">
+        <div class="image" *ngIf="selectedRestaurante">
+          <img mat-card-image [src]="selectedRestaurante.img" alt="image restaurante">
+        </div>
+
+        <mat-form-field>
+          <mat-label>ID:</mat-label>
+          <input matInput formControlName="id" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Restaurante</mat-label>
+          <input
+          id="name"
+          matInput
+          formControlName = "name"
+          placeholder="Name"
+          type="text"
+        />
+        <mat-error *ngIf="form.controls['name'].hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf="form.controls['name'].hasError('minlength')">Name shoud at least 6 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Tipo</mat-label>
+          <input
+          id="type"
+          matInput
+          formControlName = "type"
+          placeholder="type"
+          type="text"
+        />
+        <mat-error *ngIf="form.controls['type'].hasError('required')">Type is required</mat-error>
+        <mat-error *ngIf="form.controls['type'].hasError('minlength')">Type shoud at least 5 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Endereço</mat-label>
+          <input
+          id="endereco"
+          matInput
+          formControlName = "endereco"
+          placeholder="endereco"
+          type="text"
+        />
+        <mat-error *ngIf="form.controls['endereco'].hasError('required')">Endereço is required</mat-error>
+        <mat-error *ngIf="form.controls['endereco'].hasError('minlength')">Endereço shoud at least 6 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Funcionamento</mat-label>
+          <input
+          id="horario"
+          matInput
+          formControlName = "horario"
+          placeholder="funcionamento"
+          type="text"
+        />
+        <mat-error *ngIf="form.controls['horario'].hasError('required')">Horario is required</mat-error>
+        <mat-error *ngIf="form.controls['horario'].hasError('minlength')">Horario shoud at least 6 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Como chegar</mat-label>
+          <input
+          id="chegar"
+          matInput
+          formControlName = "comoChegar"
+          placeholder="Não disponivel"
+          type="text"
+        />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-raised-button (click)="goBack()">Voltar</button>
+
+        <button mat-raised-button color="primary" *ngIf="isEditing" (click)="update()">Update</button>
+
+        <button mat-raised-button color="primary" *ngIf="!isEditing" (click)="create()">Create</button>
+
+        <button mat-raised-button color="warn">
+          <span class="material-symbols-outlined">hide_source</span>
+        </button>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+</div>
+</form>
+
+
+

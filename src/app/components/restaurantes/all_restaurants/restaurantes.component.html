@@ -2,6 +2,8 @@
 <body>
   <h2>Restaurantes Madero Curitiba</h2>
 
+  <app-restaurante-search [label]="'Restaurante search'" (selected)="onSelected($event)"></app-restaurante-search>
+
   <section class="content">
     <ul class="restaurantes">
       <li

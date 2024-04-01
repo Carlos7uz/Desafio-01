@@ -1,13 +1,12 @@
-<div class="title-app">
+<div class="title-app" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="24px">
   <h1>Encontre aqui</h1>
   <h2>um restaurante MADERO</h2>
-  <app-search></app-search>
+  <app-restaurante-search [label]="'Restaurante search'" (selected)="onSelected($event)"></app-restaurante-search>
 </div>
 
 
 <h3>Melhores avaliados de Curitiba</h3>
 <br>
-
 
 <div
   class="shopping-box"  fxLayout = "row"
@@ -29,7 +28,7 @@
 </div>
 
 
-<div class="delivery">
+<div class="delivery" fxLayout="row" fxLayoutAlign="space-around stretch">
   <img  class="img_app_delivery" src="../../../assets/img/app_madero_mao-removebg-preview.png" alt="aplicativo MADERO">
   <h4 class="title_delivery">Faça parte do grupo MADERO</h4>
 

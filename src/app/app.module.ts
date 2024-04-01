@@ -13,7 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { SearchComponent } from './components/search/search.component';
-import { AdmFunctionsComponent } from './components/adm-functions/adm-functions.component';
+
+
 
 
 
@@ -25,7 +26,9 @@ import { AdmFunctionsComponent } from './components/adm-functions/adm-functions.
     LoginComponent,
     HeaderComponent,
     CadastroComponent,
-    AdmFunctionsComponent,
+
+
+
 
 
 

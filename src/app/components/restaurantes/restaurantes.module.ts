@@ -5,6 +5,9 @@ import { RestauranteDetailComponent } from './restaurante-detail/restaurante-det
 import { MaterialModule } from 'src/app/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RestaurantesRoutingModule } from './restaurant-routing.module';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
@@ -17,6 +20,8 @@ import { RestaurantesRoutingModule } from './restaurant-routing.module';
     RestaurantesRoutingModule,
     MaterialModule,
     FlexLayoutModule,
+    FormsModule,
+    SharedModule,
   ]
 })
 export class RestaurantesModule { }

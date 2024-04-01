@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Restaurante } from 'src/app/core/models/restaurante.model';
 import { RestauranteService } from 'src/app/core/services/restaurante.service';
 
@@ -14,7 +15,7 @@ export class RestaurantesComponent implements OnInit {
 
 
 
-  constructor(private restauranteService: RestauranteService) {}
+  constructor(private restauranteService: RestauranteService, private router: Router) {}
 
 
   ngOnInit(): void {
@@ -26,5 +27,8 @@ export class RestaurantesComponent implements OnInit {
       this.restaurantes = restaurantes);
   }
 
+  onSelected(restaurante: Restaurante): void{
+    this.router.navigate(['/restaurantes', restaurante.id]);
+  }
 
 }

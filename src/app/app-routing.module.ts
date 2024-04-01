@@ -6,6 +6,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { AdmComponent } from './components/adm/adm.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'forms', component: FormsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
+  {path: 'adm', component: AdmComponent},
   {
     path: 'restaurantes',
     loadChildren: () => import('./components/restaurantes/restaurantes.module').then
@@ -24,6 +26,11 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./components/dashboard/dashboard.module').then
     ((module) => module.DashboardModule)
+  },
+  {
+    path: 'adm',
+    loadChildren: () => import('./components/adm/adm.module').then
+    ((module) => module.AdmModule)
   },
   {
     path: '**',

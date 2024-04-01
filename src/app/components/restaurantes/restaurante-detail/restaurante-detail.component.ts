@@ -1,8 +1,8 @@
-import { RestauranteService } from 'src/app/core/services/restaurante.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Restaurante } from 'src/app/core/models/restaurante.model';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Restaurante } from 'src/app/core/models/restaurante.model';
+import { RestauranteService } from 'src/app/core/services/restaurante.service';
 
 @Component({
   selector: 'app-restaurante-detail',
@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 
 export class RestauranteDetailComponent  implements OnInit {
   selectedRestaurante!: Restaurante;
+  isEditing!: boolean;
+
 
   constructor(
     private restauranteService: RestauranteService,
@@ -30,17 +32,29 @@ export class RestauranteDetailComponent  implements OnInit {
       (this.selectedRestaurante = restaurante))
   }
 
+
   goBack():void{
     this.location.back();
   }
 
-  save(): void{
-    this.restauranteService.updateRestaurante(this.selectedRestaurante).subscribe(
-      (restaurante) => console.log(restaurante));
-      location.reload();
+  isFormValid(): boolean {
+    const selectedRestaurante = this.selectedRestaurante;
+    return !(
+      selectedRestaurante.name.trim() &&
+      selectedRestaurante.type.trim() &&
+      selectedRestaurante.endereco.trim() &&
+      selectedRestaurante.horario.trim()
+    );
   }
 
+  save(): void{
+
+  }
 
   formValid(): boolean{
     return !!this.selectedRestaurante.name.trim()
-  }}
+  }
+
+}
+
+

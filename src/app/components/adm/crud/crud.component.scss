@@ -1,11 +1,31 @@
-body {
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adm {
   margin: 0;
   padding: 0;
   font-family: "Playfair Display";
-  display: flex;
 
-  align-items: center;
 }
+
+mat-card{
+  width: 50%;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4vh;
+}
+
+.snackbar-error {
+  background-color: red !important; /* Cor de fundo desejada */
+  color: white !important; /* Cor do texto desejada */
+}
+
 
 .goBack{
   position: fixed;
@@ -28,15 +48,12 @@ body {
   overflow: hidden;
   margin-left: 30vh;
   margin-right: 30vh;
-  height: auto;
+  height: 55vh;
 }
 
 .image img {
-  width: 100%;
-  max-width: 500px;
+  width: 107.3%;
   height: 25vh;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 
 }
 
@@ -97,8 +114,6 @@ body {
 }
 
 .admin {
-  display: flex;
-  width: 100%;
   margin-top: 20px;
   padding: 20px;
   background-color: #fff;
@@ -109,6 +124,7 @@ body {
 
 .admin button {
   font-size: 2vh;
+  font-weight: 900;
   width: 20vh;
 
 }
@@ -116,3 +132,10 @@ body {
 .admin button:hover{
   background-color: #dfdddd;
 }
+
+
+.update{
+  width: 50vh;
+}
+
+

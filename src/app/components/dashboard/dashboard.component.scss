@@ -130,7 +130,7 @@ mat-card-content{
   border-radius: 2vh;
 
   margin: auto;
-  padding: 0;
+
   margin-bottom: 8rem;
 
   box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2),
@@ -142,8 +142,8 @@ mat-card-content{
 .title_delivery{
   display: flex;
   justify-content: flex-start;
+
   margin: auto;
-  margin-bottom: 24vh;
 
   font-size: 3.5rem;
   padding: 0;
@@ -185,5 +185,8 @@ mat-card-content{
 
 }
 
-
+.title-app{
+  width: 100%;
+  margin-bottom: 5vh;
+}
 

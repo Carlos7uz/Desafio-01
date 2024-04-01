@@ -8,11 +8,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { FooterComponent } from '../components/footer/footer.component';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 
 const COMPONENTS =[
   PageNotFoundComponent,
-  LoadingComponent
+  LoadingComponent,
+
 
 ];
 
@@ -35,6 +39,16 @@ const MODULES = [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
       multi: true
     }
   ]

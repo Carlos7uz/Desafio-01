@@ -1,4 +1,5 @@
 {
+  "forms": [],
   "users": [
     {
       "id": 1,
@@ -70,13 +71,29 @@
       "email": "teste3@teste3.com.br",
       "cell": "33333333333",
       "password": "12897832049"
+    },
+    {
+      "id": 10,
+      "type": 0,
+      "name": "testeeee",
+      "email": "teste4@teste.com",
+      "cell": "99999999999",
+      "password": "teste4"
+    },
+    {
+      "id": 11,
+      "type": 0,
+      "name": "marcos",
+      "email": "marcos@teste.com",
+      "cell": "4242422412421",
+      "password": "marcos"
     }
   ],
   "restaurantes": [
     {
       "id": 1,
       "img": "../assets/img/smadero-estacao.jpg",
-      "name": "Madero - Shopping Estação",
+      "name": "Madero Shopping Estação",
       "type": "Steakhouse",
       "endereco": "Avenida Sete de Setembro, 2775, Rebouças, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -85,7 +102,7 @@
     {
       "id": 2,
       "img": "../../../assets/img/madero-palladium.jpg",
-      "name": "Madero - Shopping Palladium",
+      "name": "Madero Shopping Palladium",
       "type": "Hamburgueria",
       "endereco": "Avenida Presidente Kennedy, 4121, Portão, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -94,7 +111,7 @@
     {
       "id": 3,
       "img": "../../../assets/img/madero-patioBatel.jpg",
-      "name": "Madero - Shopping Patio Batel",
+      "name": "Madero Shopping Patio Batel",
       "type": "Steakhouse",
       "endereco": "Avenida do Batel, 1868, Batel, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -103,7 +120,7 @@
     {
       "id": 4,
       "img": "../../../assets/img/madero-champagnat.jpg",
-      "name": "Madero - Champagnat",
+      "name": "Madero Champagnat",
       "type": "Steakhouse",
       "endereco": "Avenida Cândido Hartmann, 887, Bigorrilho, Curitiba-PR",
       "horario": "Domingo - quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -112,7 +129,7 @@
     {
       "id": 5,
       "img": "../../../assets/img/madero-comendador.jpg",
-      "name": "Madero - Comendador",
+      "name": "Madero Comendador",
       "type": "Steakhouse",
       "endereco": "Rua Comendador Araújo, 152, Centro, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -121,7 +138,7 @@
     {
       "id": 6,
       "img": "../../../assets/img/madero-avenidaBatel.jpg",
-      "name": "Madero - Avenida Batel",
+      "name": "Madero Avenida Batel",
       "type": "Steakhouse",
       "endereco": "Rua Bispo Dom José, 2377, Batel, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -130,7 +147,7 @@
     {
       "id": 7,
       "img": "../../../assets/img/madero-jardimSocial.jpg",
-      "name": "Madero - Jardim Social",
+      "name": "Madero Jardim Social",
       "type": "Steakhouse",
       "endereco": "Avenida Nossa Senhora da Luz, 2521, Jardim Social, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
@@ -139,11 +156,28 @@
     {
       "id": 8,
       "img": "../../../assets/img/madero-cabral.jpg",
-      "name": "Madero - Cabral ",
+      "name": "Madero Cabral ",
       "type": "Steakhouse",
       "endereco": "Avenida Munhoz da Rocha, 580, Cabral, Curitiba-PR",
       "horario": "Domingo a quinta-feira: 11h45 – 22h30 Sexta-feira e sábado: 11h45 – 23h00",
       "comoChegar": ""
+    },
+    {
+      "name": "teste1",
+      "type": "teste1",
+      "endereco": "teste1",
+      "horario": "teste1",
+      "comoChegar": "",
+      "id": 9
+    },
+    {
+      "img": "",
+      "name": "teste2",
+      "type": "teste2",
+      "endereco": "teste2",
+      "horario": "teste2",
+      "comoChegar": "",
+      "id": 10
     }
   ]
 }
