@@ -4,7 +4,7 @@
   <form *ngIf="userForm" [formGroup]="userForm" (ngSubmit)="register()">
     <div class="form-group">
       <label for="name">Nome:</label>
-      <input type="text" formControlName="name">
+      <input type="text" formControlName="name" placeholder="Nome">
       <div *ngIf="errors['name']">{{ errors['name'] }}</div>
     </div>
 

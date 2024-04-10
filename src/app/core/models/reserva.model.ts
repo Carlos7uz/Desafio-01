@@ -1,7 +1,7 @@
 export interface Reserva {
-  id: number;
+  id?: number;
   place: string;
   date: string;
   people: number;
-  time: number;
+  time: string;
 }

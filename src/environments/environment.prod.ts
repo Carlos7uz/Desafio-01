@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: '/api'
+  baseUrl: '/https://api-rest-pi-nine.vercel.app'
 };

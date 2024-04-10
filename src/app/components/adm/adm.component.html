@@ -1,5 +1,6 @@
 
 <body>
+
   <h2>Painel Admin</h2>
 
   <app-restaurante-search fxLayoutAlign="center center" [label]="'Restaurant to update'" (selected)="onSelected($event)" ></app-restaurante-search>
@@ -10,6 +11,7 @@
     </button>
   </div>
 
+  <h2>Restaurantes</h2>
   <section class="content">
     <ul class="restaurantes">
       <li
@@ -31,6 +33,38 @@
     </ul>
   </section>
 
+
+  <h2>Reservas</h2>
+  <mat-table [dataSource]="reservas">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="place">
+      <mat-header-cell *matHeaderCellDef> Place </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.place }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.date }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="people">
+      <mat-header-cell *matHeaderCellDef> People </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.people }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="time">
+      <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.time }} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="['id', 'place', 'date', 'people', 'time']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id', 'place', 'date', 'people', 'time']"></mat-row>
+  </mat-table>
 
 </body>
 

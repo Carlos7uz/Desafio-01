@@ -6,11 +6,11 @@ import { Reserva } from 'src/app/core/models/reserva.model';
 import { ReservaService } from 'src/app/core/services/reserva.service';
 
 @Component({
-  selector: 'app-forms',
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.scss']
+  selector: 'app-reserva',
+  templateUrl: './reserva.component.html',
+  styleUrls: ['./reserva.component.scss']
 })
-export class FormsComponent implements OnInit {
+export class ReservaComponent implements OnInit {
   reservaForm!: FormGroup;
   localDesejado: string = '';
 
@@ -23,35 +23,16 @@ export class FormsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.localDesejado = this.route.snapshot.paramMap.get('localDesejado') || '';
-
     this.reservaForm = new FormGroup({
       place: new FormControl(this.localDesejado, Validators.required),
       date: new FormControl('', Validators.required),
       people: new FormControl('', [Validators.required, Validators.min(1)]),
       time: new FormControl('', Validators.required)
     });
-    console.log(this.reservaForm)
   }
 
-  onSubmit() {
-    console.log('Button Reservar clicked')
-    console.log(this.reservaForm)
-    if (this.reservaForm.valid) {
-      console.log('Button reserva clicked and enter in the true if')
-      const reservaData: Reserva = this.reservaForm.value;
-      this.reservaService.enviarReserva(reservaData).subscribe(
-        (reserva) => {
-          console.log('Reserva created successfully', reserva);
-          this.reservaForm.reset();
-          alert('Reserva criada com sucesso!');
-        },
-        (error) => {
-          console.error('Error creating reserva', error);
-          alert('Erro ao criar reserva, tente novamente.');
-        }
-      );
-    }
+  onSubmit(){
+
   }
 
   goBack(): void {

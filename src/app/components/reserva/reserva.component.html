@@ -7,26 +7,23 @@
       <label for="place">Local desejado:</label>
       <input type="text" id="place" name="place" [value]="localDesejado" readonly>
 
-
     </div>
 
     <div class="form-group">
       <label for="date">Data desejada:</label>
-      <input type="date" id="date" name="date" formControlName="date" required>
-      <div *ngIf="reservaForm.controls['date'].invalid && reservaForm.controls['date'].touched">
-        <p *ngIf="reservaForm.controls['date'].errors?.['required']">Data desejada é obrigatória.</p>
-      </div>
+      <input type="date" id="date" name="date" required>
+
     </div>
 
     <div class="form-group">
       <label for="people">Número de pessoas:</label>
-      <input type="number" id="people" name="people" formControlName="people" required>
+      <input type="number" id="people" name="people" min="1" required>
 
     </div>
 
     <div class="form-group">
       <label for="time">Horário da reserva:</label>
-      <select id="time" name="time" formControlName="time" required>
+      <select id="time" name="time" required>
         <option value="" disabled selected>Selecione o horário</option>
         <option value="11:45">11:45</option>
         <option value="12:00">12:00</option>
@@ -76,7 +73,7 @@
 
     </div>
     <div class="button-reserva">
-      <button class="reservar" type="submit" [disabled]="reservaForm.invalid" (click)="onSubmit()">Reservar</button>
+      <button class="reservar" type="submit" [disabled]="reservaForm.valid" (click)="onSubmit()">Reservar</button>
     </div>
 
   </form>

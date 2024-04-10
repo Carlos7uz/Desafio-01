@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { SearchComponent } from './components/search/search.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
 
 
 
@@ -26,12 +27,7 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     HeaderComponent,
     CadastroComponent,
-
-
-
-
-
-
+    ReservaComponent,
   ],
   imports: [
     // @angular

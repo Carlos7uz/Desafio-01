@@ -8,13 +8,19 @@ import { Reserva } from '../models/reserva.model';
   providedIn: 'root'
 })
 export class ReservaService {
-  private apiUrl = `${environment.baseUrl}/forms`
+  private apiUrl = `${environment.baseUrl}/reservas`
 
   constructor(private http: HttpClient) { }
 
   enviarReserva(reservaData: Reserva): Observable<Reserva> {
     return this.http.post<Reserva>(this.apiUrl, reservaData).pipe(
-      tap((restaurantes) => console.log(`Post ${restaurantes.id} ${restaurantes.place} restaurantes for db`)))
+      tap((reserva) => console.log(`Post ${reserva.id} ${reserva.place} reserva for db`)),
+      tap((reserva) => this.getReserva()))
   }
 
+  getReserva(): Observable<Reserva[]>{
+    return this.http.get<Reserva[]>(this.apiUrl).pipe(
+      tap((reservas) => console.log(`fetched ${reservas.length} reservas`))
+    );
+  };
 }

@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" required>
+  </div>
+  <div>
+    <label for="password">Senha:</label>
+    <input type="password" id="password" formControlName="password" required>
+  </div>
+  <button type="submit">Entrar</button>
+  <div class="form-links">
+    <p>Ainda não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+    <p><a href="/">Voltar para a Página Principal</a></p>
+  </div>
+</form>
