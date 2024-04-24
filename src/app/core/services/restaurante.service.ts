@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Restaurante } from '../models/restaurante.model';
-import { catchError, map, Observable, of, tap, throwError } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders } from '@angular/common/http';
@@ -28,13 +28,11 @@ export class RestauranteService {
 
   }
 
-
   //GET /restaurantes/id
   getRestaurante(id: number): Observable<Restaurante> {
     return this.http.get<Restaurante>(`${this.restaurantesUrl}/${id}`).pipe(
       tap((restaurante) => console.log(`fetched restaurante id=${id} and name= ${restaurante.name}`))
     )
-
   }
 
   //GET /restaurantes?name=term
@@ -59,7 +57,6 @@ export class RestauranteService {
     return this.http.put<Restaurante>(`${this.restaurantesUrl}/${restaurante.id}`, restaurante).pipe(
       tap((restaurante) => console.log(`update restaurante ${restaurante.name}`))
     )
-
   }
 
   //Post /restaurantes
@@ -67,7 +64,6 @@ export class RestauranteService {
     return this.http.post<Restaurante>(this.restaurantesUrl, restaurante).pipe(
       tap((restaurante) => console.log(`create restaurante ${restaurante.id} ${restaurante.name}`))
     )
-
   }
 
 }

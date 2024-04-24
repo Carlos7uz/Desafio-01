@@ -59,7 +59,6 @@ export class CrudComponent implements OnInit {
     }
   }
 
-
   goBack():void{
     this.location.back();
   }
@@ -107,10 +106,6 @@ export class CrudComponent implements OnInit {
       this.showErrorMsg();
     }
   }
-
-
-
-
   /*
 
   onFileSelected(event: any){
@@ -129,7 +124,6 @@ export class CrudComponent implements OnInit {
     }
   }
   */
-
   private showErrorMsg(): void{
     this.snackBar.open('Pleas check the errors found.', 'Ok', {
       duration: 5000,
@@ -137,4 +131,5 @@ export class CrudComponent implements OnInit {
       panelClass: ['snackbar-error'] // Adicione uma classe CSS personalizada
     })
   }
+
 }

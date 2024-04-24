@@ -33,7 +33,6 @@ export class AdmComponent implements OnInit {
       this.restaurantes = restaurantes);
   }
 
-
   onSelected(restaurante: Restaurante): void {
     this.router.navigate(['/adm', restaurante.id]);
   }

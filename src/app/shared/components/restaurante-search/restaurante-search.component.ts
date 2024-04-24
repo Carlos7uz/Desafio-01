@@ -29,7 +29,6 @@ export class RestauranteSearchComponent implements OnInit {
 
   onSelected(selectedItem: MatAutocompleteSelectedEvent): void{
     this.searchTerm.next(''); // limpa a pesquisa
-
     const restaurante: Restaurante = selectedItem.option.value;
     this.selected.emit(restaurante);
   }

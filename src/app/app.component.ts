@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from './core/services/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  isLoggedIn$: Observable<boolean>;
   title = 'desafio1';
+
+  constructor(private authService: AuthService){
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
+  }
+
+  onLogout(): void{
+    this.authService.logout();
+  }
 }

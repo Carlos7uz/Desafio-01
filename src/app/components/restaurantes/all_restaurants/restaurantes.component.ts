@@ -13,10 +13,7 @@ export class RestaurantesComponent implements OnInit {
 
   restaurantes: Restaurante[] = [];
 
-
-
   constructor(private restauranteService: RestauranteService, private router: Router) {}
-
 
   ngOnInit(): void {
     this.getRestaurantes();

@@ -3,6 +3,10 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Restaurante } from 'src/app/core/models/restaurante.model';
 import { RestauranteService } from 'src/app/core/services/restaurante.service';
+import * as mapboxgl from 'mapbox-gl';
+import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-restaurante-detail',
@@ -11,19 +15,27 @@ import { RestauranteService } from 'src/app/core/services/restaurante.service';
 })
 
 export class RestauranteDetailComponent  implements OnInit {
+  @Input() isLoggedIn: boolean | null = null;
+
   selectedRestaurante!: Restaurante;
   isEditing!: boolean;
-
+  map?: mapboxgl.Map;
 
   constructor(
     private restauranteService: RestauranteService,
     private location: Location,
     private route: ActivatedRoute,
-  ) { }
+
+  ) {
+
+    }
 
   ngOnInit(): void {
       this.getRestaurante();
+      this.initializeMap();
   }
+
+
 
   getRestaurante(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -53,6 +65,19 @@ export class RestauranteDetailComponent  implements OnInit {
 
   formValid(): boolean{
     return !!this.selectedRestaurante.name.trim()
+  }
+
+  private initializeMap(): void {
+    const accessToken = environment.mapboxKey;
+
+    this.map = new mapboxgl.Map({
+      container: 'mapa-mapbox',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [ -49.26673517437175, -25.438318956976637], //lng, lat
+      zoom: 18,
+      accessToken: accessToken
+    });
+    console.log('mapa funcionado')
   }
 
 }

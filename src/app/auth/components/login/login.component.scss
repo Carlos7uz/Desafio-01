@@ -1,0 +1,60 @@
+form {
+  width: 20%;
+  margin: auto;
+  padding: 20px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+form div {
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button[type="submit"] {
+  width: 96%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+
+  margin-bottom: 25px;
+}
+
+.button-links {
+  margin-top: 15px;
+}
+
+.button-links a {
+  display: block;
+  margin-bottom: 5px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.button-links a:hover {
+  text-decoration: underline;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+}

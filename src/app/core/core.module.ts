@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
-import { FooterComponent } from '../components/footer/footer.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
@@ -16,8 +15,6 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 const COMPONENTS =[
   PageNotFoundComponent,
   LoadingComponent,
-
-
 ];
 
 const MODULES = [
@@ -30,11 +27,8 @@ const MODULES = [
 
 @NgModule({
   declarations: [ COMPONENTS ],
-  imports: [ CommonModule, MODULES],
-  exports: [
-    COMPONENTS,
-    MODULES
-  ],
+  imports: [ CommonModule, MODULES ],
+  exports: [ COMPONENTS, MODULES ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -52,8 +46,8 @@ const MODULES = [
       multi: true
     }
   ]
-
 })
+
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule?: CoreModule){
     if(parentModule){

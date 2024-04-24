@@ -1,10 +1,19 @@
+h1{
+  display: flex;
+  justify-content: center;
+}
+
 body {
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: auto;
   font-family: "Playfair Display";
   display: flex;
-
+  width: 100%;
   align-items: center;
+  height: auto;
+
+
+
 }
 
 .goBack{
@@ -21,22 +30,30 @@ body {
 .selected-content {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  align-items: center;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
-  margin-left: 30vh;
-  margin-right: 30vh;
+
   height: auto;
+  min-height: 500px;
+
+  width: 35%;
+
+  margin-left: 50vh
+}
+
+.image{
+  width: 100%;
+
 }
 
 .image img {
-  width: 100%;
-  max-width: 500px;
-  height: 25vh;
-  border-top-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+
+  width: 35%;
+  height: auto;
+  margin-bottom: 5vh;
 
 }
 
@@ -115,4 +132,12 @@ body {
 
 .admin button:hover{
   background-color: #dfdddd;
+}
+
+#mapa-mapbox{
+  width: 500px;
+  height: 480px;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  border-radius: 1vh;
 }

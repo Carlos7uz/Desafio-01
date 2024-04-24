@@ -27,15 +27,12 @@
 
         <span class="type">{{restaurante.type}}</span>
 
-
-
       </li>
     </ul>
   </section>
 
-
   <h2>Reservas</h2>
-  <mat-table [dataSource]="reservas">
+  <mat-table class="tabela-reservas" [dataSource]="reservas" >
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
@@ -65,6 +62,8 @@
     <mat-header-row *matHeaderRowDef="['id', 'place', 'date', 'people', 'time']"></mat-header-row>
     <mat-row *matRowDef="let row; columns: ['id', 'place', 'date', 'people', 'time']"></mat-row>
   </mat-table>
+
+  <footer></footer>
 
 </body>
 

@@ -4,12 +4,10 @@
   </span>
 </div>
 
-<body>
-
+<h1>Restaurant Details</h1>
+<body fxLayout="row" fxLayoutAlign="center center" >
 
   <div class="selected-content" *ngIf="selectedRestaurante" fxLayout="column">
-    <h1>Restaurant Details</h1>
-
 
       <div class="image">
         <img [src]="selectedRestaurante.img" alt="image restaurante">
@@ -40,10 +38,14 @@
           </div>
         </div>
 
-        <button class="reserve-button" [routerLink]="['/forms', {localDesejado: selectedRestaurante.name}]">Reservar Agora</button>
+        <button *ngIf="!isLoggedIn" class="reserve-button" [routerLink]="['/forms', {localDesejado: selectedRestaurante.name}]">Reservar Agora</button>
+
       </div>
     </div>
-</body>
+
+    <div id="mapa-mapbox"></div>
+
+  </body>
 
 
 

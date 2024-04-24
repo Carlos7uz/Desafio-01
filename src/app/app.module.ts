@@ -9,22 +9,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsComponent } from './components/forms/forms.component';
-import { LoginComponent } from './components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { SearchComponent } from './components/search/search.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
-
-
-
-
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsComponent,
-    LoginComponent,
     HeaderComponent,
     CadastroComponent,
     ReservaComponent,
@@ -37,15 +32,16 @@ import { ReservaComponent } from './components/reserva/reserva.component';
     HttpClientModule,
     ReactiveFormsModule,
 
-    // feature
-
 
     // app
+    AuthModule,
     CoreModule,
     AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
