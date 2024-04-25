@@ -1,6 +1,7 @@
 <header>
   <div class="logo-container">
-   <img routerLink="/dashboard" src="../../../assets/img/tWr7v4lTw2v2hG8L05nXPPts1Kx4owTRt141SsVG-removebg-preview.png" alt="Madero-Logo">
+    <img *ngIf="isLoggedIn" routerLink="/dashboard" src="../../../assets/img/tWr7v4lTw2v2hG8L05nXPPts1Kx4owTRt141SsVG-removebg-preview.png" alt="Madero-Logo">
+    <img *ngIf="!isLoggedIn" src="../../../assets/img/tWr7v4lTw2v2hG8L05nXPPts1Kx4owTRt141SsVG-removebg-preview.png" alt="Madero-Logo">
 
     <ng-container *ngIf="isLoggedIn" >
       <button class="material-symbols-outlined" routerLink="/restaurantes">storefront</button>
@@ -18,9 +19,8 @@
     </a>
 
     <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="onLogout()">
-            Logout
-        </button>
+        <button mat-menu-item routerLink="/profile">Perfil</button>
+        <button mat-menu-item (click)="onLogout()">Logout</button>
     </mat-menu>
 
   </div>

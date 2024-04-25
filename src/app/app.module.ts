@@ -14,6 +14,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { AuthModule } from './auth/auth.module';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
     HeaderComponent,
     CadastroComponent,
     ReservaComponent,
+    ProfileComponent,
   ],
   imports: [
     // @angular

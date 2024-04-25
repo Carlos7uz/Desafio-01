@@ -1,0 +1,19 @@
+<div class="profile-container">
+  <h1>Perfil</h1>
+  <div class="user-info">
+    <p>Nome: {{ user?.name }}</p>
+    <p>Email: {{ user?.email }}</p>
+    <p>Celular: {{ user?.cell }}</p>
+  </div>
+  <form class="update-form" (ngSubmit)="updateProfile()">
+    <label>
+      Email:
+      <input [(ngModel)]="email" name="email" type="email">
+    </label>
+    <label>
+      Celular:
+      <input [(ngModel)]="cell" name="cell" type="tel">
+    </label>
+    <button type="submit">Atualizar</button>
+  </form>
+</div>

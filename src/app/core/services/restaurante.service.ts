@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Restaurante } from '../models/restaurante.model';
-import { catchError, map, Observable, of, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders } from '@angular/common/http';

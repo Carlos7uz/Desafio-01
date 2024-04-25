@@ -1,14 +1,10 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'aplication/json' })
-}
 
 @Injectable({
   providedIn: 'root'
@@ -22,20 +18,25 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+
   login(email: string, password: string): Observable<User> {
     if (!email || !password) {
       throw new Error('Os campos e-mail e senha são obrigatórios.');
     }
+
     return this.http.get<User[]>(`${this.apiUrl}?email=${email}`).pipe(
       map(users => {
         if (users && users.length > 0){
           const user = users[0];
-          if (password === user.password) {
+          if ( email === user.email && password === user.password) {
             const token = this.generateToken(user.id);
+            console.log(token)
             localStorage.setItem('token', token);
-            this.loggedIn.next(true);
+            this.updateLoggedIn();
+            console.log(user)
             return user;
           } else {
+            this.updateLoggedIn();
             throw new Error('Credenciais inválidas. Verifique seu email e senha.')
           };
 
@@ -49,9 +50,11 @@ export class AuthService {
     );
   }
 
-  private generateToken(userId: string): string {
-    // Implementação de uma função de hash simples para gerar o token
-    const token = btoa(userId); // Aqui você pode usar uma função de hash mais segura
+
+  private generateToken(userId: number): string {
+    const randomString = Math.random().toString(36).substr(2, 5);
+    const token = userId + '-' + randomString;
+    //const token = btoa(preToken);
     return token;
   }
 
@@ -59,17 +62,77 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  getUserIdFromToken(): number | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const preUserId = token.split('-')[0];
+      const userId = parseInt(preUserId, 10)
+      console.log('Id extraido:', userId)
+      return userId;
+    }
+    return null;
+  }
+
+
   logout(): void {
     // Remover o token de autenticação do armazenamento local
     localStorage.removeItem('token');
-    this.loggedIn.next(false)
+    this.updateLoggedIn();
     this.router.navigate(['/login'])
   }
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  updateLoggedIn():void{
+    const token = localStorage.getItem('token');
+    if(token){
+      this.loggedIn.next(true)
+    }else{
+      this.loggedIn.next(false)
+    }
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}/${user.id}`, user).pipe(
+      tap((user) => console.log(`update restaurante ${user.name}`))
+    )
+  }
+
+  getUser(id: number): Observable<User> {
+    // Retrieve the user's profile data from the API
+    return this.http.get<User>(`${this.apiUrl}/${id}`).pipe(
+      tap((user) => console.log(`fetched user id=${id} and name= ${user.name}`))
+    );
+    const token = localStorage.getItem('token');
+    const headers = { 'Authorization': `Bearer ${token}` };
+
+    if(token && headers){
+    } else {
+      console.log('Não existe um token para autenticar sua chamada');
+    }
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      tap((profiles) => console.log(`fetched ${profiles.length} profiles`))
+    );
+
+  }
+
+
+
 }
+/*
+updateUser(user: User): void {
+  // Update the user's profile data in the API
+  const token = localStorage.getItem('token');
+  const headers = { 'Authorization': `Bearer ${token}` };
+  this.http.put(`${this.apiUrl}/user`, user, { headers }).subscribe();
+}
+*/
+
 
 
 

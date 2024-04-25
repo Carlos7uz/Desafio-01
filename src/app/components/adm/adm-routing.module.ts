@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmComponent } from './adm.component';
 import { CrudComponent } from './crud/crud.component';
+import { AuthGuard } from 'src/app/auth/guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: AdmComponent},
-  {path: ':id', component: CrudComponent},
+  {path: '', component: AdmComponent, canActivate: [AuthGuard]},
+  {path: ':id', component: CrudComponent, canActivate: [AuthGuard]},
 ]
 
 @NgModule({
