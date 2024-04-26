@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(email, password).subscribe(
       user => {
+        this.authService.setUserType(user.type);
+        this.authService.setIsAdmin(user.type === 1);
         this.router.navigate(['/dashboard']);
       },
       error => {

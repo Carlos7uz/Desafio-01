@@ -22,6 +22,7 @@ export class UserService {
       );
     }
 
+
     register(user: User): Observable<User> {
       return this.http.post<User>(this.usersUrl, user).pipe(
         catchError((error) => {
@@ -42,5 +43,6 @@ export class UserService {
         map(users => users.some(user => user.cell === cell))
       );
     }
+
   }
 

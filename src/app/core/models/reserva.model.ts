@@ -5,3 +5,4 @@ export interface Reserva {
   people: number;
   time: string;
 }
+

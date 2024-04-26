@@ -5,7 +5,7 @@
 
     <ng-container *ngIf="isLoggedIn" >
       <button class="material-symbols-outlined" routerLink="/restaurantes">storefront</button>
-      <button class="material-symbols-outlined" routerLink="/adm">admin_panel_settings</button>
+      <button class="material-symbols-outlined" *ngIf="isAdmin" routerLink="/adm">admin_panel_settings</button>
       <button class="material-symbols-outlined" [matMenuTriggerFor]="menu" >
         <mat-icon>person</mat-icon>
       </button>

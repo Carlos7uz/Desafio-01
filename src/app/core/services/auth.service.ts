@@ -16,6 +16,9 @@ export class AuthService {
 
   isLoggedIn$ = this.loggedIn.asObservable();
 
+  private isAdminSubject = new BehaviorSubject<boolean>(false);
+  private userTypeSubject = new BehaviorSubject<number | null>(null);
+
   constructor(private http: HttpClient, private router: Router) {}
 
 
@@ -29,7 +32,7 @@ export class AuthService {
         if (users && users.length > 0){
           const user = users[0];
           if ( email === user.email && password === user.password) {
-            const token = this.generateToken(user.id);
+            const token = this.generateToken(user.id, user.type);
             console.log(token)
             localStorage.setItem('token', token);
             this.updateLoggedIn();
@@ -51,10 +54,9 @@ export class AuthService {
   }
 
 
-  private generateToken(userId: number): string {
-    const randomString = Math.random().toString(36).substr(2, 5);
-    const token = userId + '-' + randomString;
-    //const token = btoa(preToken);
+  private generateToken(userId: number, userType: number): string {
+    const randomString = Math.random().toString(36).substr(2, 6);
+    const token = userId + '-' + randomString + '/' + userType;
     return token;
   }
 
@@ -73,6 +75,16 @@ export class AuthService {
     return null;
   }
 
+  getUserTypeFromToken(): number | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const preUserType = token.split('/')[1];
+      const userType = parseInt(preUserType, 10);
+      console.log('Type extraido:', userType);
+      return userType;
+    }
+    return null;
+  }
 
   logout(): void {
     // Remover o token de autenticação do armazenamento local
@@ -93,6 +105,24 @@ export class AuthService {
       this.loggedIn.next(false)
     }
   }
+
+
+  setIsAdmin(isAdmin: boolean): void {
+    this.isAdminSubject.next(isAdmin);
+  }
+
+  getIsAdmin(): Observable<boolean> {
+    return this.isAdminSubject.asObservable();
+  }
+
+  setUserType(userType: number): void {
+    this.userTypeSubject.next(userType);
+  }
+
+  getUserType(): Observable<number | null> {
+    return this.userTypeSubject.asObservable();
+  }
+
 
   updateUser(user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${user.id}`, user).pipe(
