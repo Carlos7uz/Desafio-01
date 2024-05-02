@@ -5,8 +5,6 @@ import { Restaurante } from 'src/app/core/models/restaurante.model';
 import { RestauranteService } from 'src/app/core/services/restaurante.service';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-restaurante-detail',
@@ -25,17 +23,12 @@ export class RestauranteDetailComponent  implements OnInit {
     private restauranteService: RestauranteService,
     private location: Location,
     private route: ActivatedRoute,
-
-  ) {
-
-    }
+  ) {}
 
   ngOnInit(): void {
       this.getRestaurante();
       this.initializeMap();
   }
-
-
 
   getRestaurante(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -47,24 +40,6 @@ export class RestauranteDetailComponent  implements OnInit {
 
   goBack():void{
     this.location.back();
-  }
-
-  isFormValid(): boolean {
-    const selectedRestaurante = this.selectedRestaurante;
-    return !(
-      selectedRestaurante.name.trim() &&
-      selectedRestaurante.type.trim() &&
-      selectedRestaurante.endereco.trim() &&
-      selectedRestaurante.horario.trim()
-    );
-  }
-
-  save(): void{
-
-  }
-
-  formValid(): boolean{
-    return !!this.selectedRestaurante.name.trim()
   }
 
   private initializeMap(): void {

@@ -3,29 +3,20 @@ import { Restaurante } from '../models/restaurante.model';
 import { Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class RestauranteService {
-  // RestaurantesUrl
   private restaurantesUrl = `${environment.baseUrl}/restaurantes`;
 
-  private httpOptions = {
-    header : new HttpHeaders({ 'Content-Type': 'applications/json'})
-  }
-
-  //Modulo Http
   constructor(private http: HttpClient) { }
 
-  //GET /restaurantes
   getRestaurantes(): Observable<Restaurante[]> {
     return this.http.get<Restaurante[]>(this.restaurantesUrl).pipe(
       tap((restaurantes) => console.log(`fetched ${restaurantes.length} restaurantes`))
     );
-
   }
 
   //GET /restaurantes/id
@@ -51,7 +42,6 @@ export class RestauranteService {
       )
   }
 
-
   //Update  PUT /restaurantes/id
   updateRestaurante(restaurante: Restaurante): Observable<Restaurante> {
     return this.http.put<Restaurante>(`${this.restaurantesUrl}/${restaurante.id}`, restaurante).pipe(
@@ -59,7 +49,6 @@ export class RestauranteService {
     )
   }
 
-  //Post /restaurantes
   createRestaurante(restaurante: Restaurante): Observable<Restaurante> {
     return this.http.post<Restaurante>(this.restaurantesUrl, restaurante).pipe(
       tap((restaurante) => console.log(`create restaurante ${restaurante.id} ${restaurante.name}`))

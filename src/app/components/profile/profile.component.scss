@@ -55,3 +55,39 @@
     }
   }
 }
+
+.reservas-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.reservas-container h2 {
+  margin-bottom: 20px;
+}
+
+.reservas-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservas-container th,
+.reservas-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.reservas-container th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.reservas-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.reservas-container tr:hover {
+  background-color: #ddd;
+}

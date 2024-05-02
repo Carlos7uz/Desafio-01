@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { environment } from 'src/environments/environment';
@@ -22,7 +22,6 @@ export class UserService {
       );
     }
 
-
     register(user: User): Observable<User> {
       return this.http.post<User>(this.usersUrl, user).pipe(
         catchError((error) => {
@@ -43,6 +42,4 @@ export class UserService {
         map(users => users.some(user => user.cell === cell))
       );
     }
-
-  }
-
+}

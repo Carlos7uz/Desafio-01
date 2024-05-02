@@ -8,13 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormsComponent } from './components/forms/forms.component';
+import { FormsComponent } from './components/reservas/reservas.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { ReservaComponent } from './components/reserva/reserva.component';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 @NgModule({
@@ -23,7 +23,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     FormsComponent,
     HeaderComponent,
     CadastroComponent,
-    ReservaComponent,
     ProfileComponent,
   ],
   imports: [
@@ -33,7 +32,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
 
     // app
     AuthModule,

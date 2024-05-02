@@ -6,5 +6,4 @@ export interface Restaurante {
   endereco: string;
   horario: string;
   comoChegar: string;
-
 }

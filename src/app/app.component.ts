@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './core/services/auth.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +9,6 @@ import { AuthService } from './core/services/auth.service';
 })
 export class AppComponent {
   isLoggedIn$: Observable<boolean>;
-  title = 'desafio1';
 
   constructor(private authService: AuthService){
     this.isLoggedIn$ = this.authService.isLoggedIn$;

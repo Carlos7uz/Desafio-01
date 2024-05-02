@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
@@ -11,16 +11,16 @@ import { User } from '../models/user.model';
 })
 
 export class AuthService {
-  private apiUrl =  `${environment.baseUrl}/users`;
-  loggedIn = new BehaviorSubject<boolean>(false)
+  private apiUrl = `${environment.baseUrl}/users`;
 
+  loggedIn = new BehaviorSubject<boolean>(false)
   isLoggedIn$ = this.loggedIn.asObservable();
 
   private isAdminSubject = new BehaviorSubject<boolean>(false);
+
   private userTypeSubject = new BehaviorSubject<number | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {}
-
 
   login(email: string, password: string): Observable<User> {
     if (!email || !password) {
@@ -33,16 +33,13 @@ export class AuthService {
           const user = users[0];
           if ( email === user.email && password === user.password) {
             const token = this.generateToken(user.id, user.type);
-            console.log(token)
             localStorage.setItem('token', token);
             this.updateLoggedIn();
-            console.log(user)
             return user;
           } else {
             this.updateLoggedIn();
             throw new Error('Credenciais inválidas. Verifique seu email e senha.')
           };
-
         } else {
           throw new Error('Usuário não encontrado.')
         }
@@ -53,19 +50,22 @@ export class AuthService {
     );
   }
 
-
   private generateToken(userId: number, userType: number): string {
     const randomString = Math.random().toString(36).substr(2, 6);
     const token = userId + '-' + randomString + '/' + userType;
-    return token;
+    return btoa(token);
   }
 
   getToken(): string | null{
-    return localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    if(token){
+      return atob(token); // Descriptografar o token antes de retorná-lo
+    }
+    return null;
   }
 
   getUserIdFromToken(): number | null {
-    const token = localStorage.getItem('token');
+    const token = this.getToken();
     if (token) {
       const preUserId = token.split('-')[0];
       const userId = parseInt(preUserId, 10)
@@ -76,7 +76,7 @@ export class AuthService {
   }
 
   getUserTypeFromToken(): number | null {
-    const token = localStorage.getItem('token');
+    const token = this.getToken();
     if (token) {
       const preUserType = token.split('/')[1];
       const userType = parseInt(preUserType, 10);
@@ -88,30 +88,22 @@ export class AuthService {
 
   logout(): void {
     // Remover o token de autenticação do armazenamento local
-    localStorage.removeItem('token');
+    this.setIsAdmin(false);
+    localStorage.clear();
     this.updateLoggedIn();
     this.router.navigate(['/login'])
   }
 
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('token');
-  }
-
-  updateLoggedIn():void{
-    const token = localStorage.getItem('token');
-    if(token){
-      this.loggedIn.next(true)
-    }else{
-      this.loggedIn.next(false)
-    }
-  }
-
-
   setIsAdmin(isAdmin: boolean): void {
     this.isAdminSubject.next(isAdmin);
+    localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
   }
 
   getIsAdmin(): Observable<boolean> {
+    const isAdmin = localStorage.getItem('isAdmin');
+    if (isAdmin) {
+      this.isAdminSubject.next(JSON.parse(isAdmin));
+    }
     return this.isAdminSubject.asObservable();
   }
 
@@ -123,6 +115,26 @@ export class AuthService {
     return this.userTypeSubject.asObservable();
   }
 
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`).pipe(
+      tap((user) => console.log(`fetched user id=${id} and name= ${user.name}`))
+    );
+    /*
+    const token = localStorage.getItem('token');
+    const headers = { 'Authorization': `Bearer ${token}` };
+
+    if(token && headers){
+    } else {
+      return throwError('Não existe um token para autenticar sua chamada');
+    }
+    */
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      tap((profiles) => console.log(`fetched ${profiles.length} profiles`))
+    );
+  }
 
   updateUser(user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${user.id}`, user).pipe(
@@ -130,40 +142,12 @@ export class AuthService {
     )
   }
 
-  getUser(id: number): Observable<User> {
-    // Retrieve the user's profile data from the API
-    return this.http.get<User>(`${this.apiUrl}/${id}`).pipe(
-      tap((user) => console.log(`fetched user id=${id} and name= ${user.name}`))
-    );
+  updateLoggedIn():void{
     const token = localStorage.getItem('token');
-    const headers = { 'Authorization': `Bearer ${token}` };
-
-    if(token && headers){
-    } else {
-      console.log('Não existe um token para autenticar sua chamada');
+    if(token){
+      this.loggedIn.next(true)
+    }else{
+      this.loggedIn.next(false)
     }
   }
-
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl).pipe(
-      tap((profiles) => console.log(`fetched ${profiles.length} profiles`))
-    );
-
-  }
-
-
-
 }
-/*
-updateUser(user: User): void {
-  // Update the user's profile data in the API
-  const token = localStorage.getItem('token');
-  const headers = { 'Authorization': `Bearer ${token}` };
-  this.http.put(`${this.apiUrl}/user`, user, { headers }).subscribe();
-}
-*/
-
-
-
-
-

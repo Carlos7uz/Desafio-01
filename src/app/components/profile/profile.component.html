@@ -17,3 +17,25 @@
     <button type="submit">Atualizar</button>
   </form>
 </div>
+
+<div class="reservas-container">
+  <h2>Minhas Reservas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Local</th>
+        <th>Data</th>
+        <th>Horário</th>
+        <th>Pessoas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservas">
+        <td>{{ reserva.place }}</td>
+        <td>{{ reserva.date }}</td>
+        <td>{{ reserva.time }}</td>
+        <td>{{ reserva.people }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

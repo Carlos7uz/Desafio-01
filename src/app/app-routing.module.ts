@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsComponent } from './components/forms/forms.component';
+import { FormsComponent } from './components/reservas/reservas.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ProfileComponent } from './components/profile/profile.component';

@@ -8,8 +8,6 @@ import { RestaurantesRoutingModule } from './restaurant-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
-
 @NgModule({
   declarations: [
     RestaurantesComponent,

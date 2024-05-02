@@ -1,4 +1,4 @@
-import { COMPILER_OPTIONS, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RestauranteSearchComponent } from './components/restaurante-search/restaurante-search.component';
 import { MaterialModule } from '../material/material.module';

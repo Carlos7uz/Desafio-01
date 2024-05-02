@@ -12,6 +12,7 @@ export class AdminGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const userType = this.authService.getUserTypeFromToken();
     if (userType !== 1) {
+      this.authService.setIsAdmin(false)
       this.router.navigate(['/dashboard']);
       return false;
     }
